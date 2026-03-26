@@ -13,17 +13,19 @@
             --card-bg: #111111;
             --text: #ffffff;
             --text-mute: #a1a1a6;
-            --accent: #0a84ff;
+            --accent: #66ccaa;
             --border: #2c2c2e;
+            --pill-bg: #1c1c1e;
         }
 
         [data-theme="light"] {
-            --bg: #ffffff;
-            --card-bg: #f5f5f7;
+            --bg: #f8fafb;
+            --card-bg: #ffffff;
             --text: #1d1d1f;
             --text-mute: #6e6e73;
-            --accent: #0071e3;
-            --border: #d2d2d7;
+            --accent: #66ccaa;
+            --border: #e5e5e7;
+            --pill-bg: #ffffff;
         }
 
         * {
@@ -36,195 +38,208 @@
             font-family: 'Inter', -apple-system, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            line-height: 1.4;
+            transition: background-color 0.4s ease;
         }
 
         .container {
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
         header {
-            padding: 100px 0 60px;
+            padding: 30px 0 10px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
         }
 
-        .header-left {
-            flex: 1;
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .headline {
+            font-size: 1rem;
+            color: var(--text-mute);
+            font-weight: 400;
+            margin-top: 4px;
         }
 
         .theme-toggle {
             background: none;
             border: 1px solid var(--border);
             color: var(--text);
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            transition: all 0.2s ease;
-            margin-top: 10px;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--accent);
-            background: rgba(10, 132, 255, 0.1);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-        }
-
-        .headline {
-            font-size: 1.25rem;
-            color: var(--text);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .summary {
-            font-size: 1.1rem;
-            color: var(--text-mute);
-            max-width: 650px;
-            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
         }
 
         .contact-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            margin-top: 8px;
         }
 
         .contact-links a {
             color: var(--accent);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: opacity 0.2s;
+            font-size: 0.85rem;
         }
 
-        .contact-links a:hover {
-            opacity: 0.7;
+        .summary {
+            font-size: 1rem;
+            color: var(--text-mute);
+            margin-top: 10px;
+            max-width: 680px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .pill-nav {
+            background: var(--pill-bg);
+            border: 1px solid var(--border);
+            padding: 4px;
+            border-radius: 12px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            padding: 6px 18px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .tab-btn.active {
+            background: var(--accent);
+            color: #1d1d1f;
+        }
+
+        .content-section {
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        .hidden {
+            display: none;
+            opacity: 0;
         }
 
         section {
-            padding: 50px 0;
-            border-top: 1px solid var(--border);
+            padding: 5px 0;
         }
 
         h2 {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--text-mute);
-            margin-bottom: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
         }
 
         .exp-row {
-            margin-bottom: 3rem;
+            margin-bottom: 15px;
         }
 
         .exp-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.5rem;
         }
 
         .exp-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            color: var(--text);
         }
 
         .exp-date {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-mute);
         }
 
         .exp-desc {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-mute);
-            margin-bottom: 1rem;
         }
 
         .skill-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
+            gap: 1rem;
         }
 
         .skill-category h3 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text);
+            margin-bottom: 2px;
         }
 
         .skill-category p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-mute);
         }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
         .project-card {
-            padding: 1.5rem;
+            padding: 1rem;
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 10px;
             border: 1px solid var(--border);
+            margin-bottom: 10px;
         }
 
         .project-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 3px;
         }
 
         .project-card p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-mute);
         }
 
         footer {
-            padding: 80px 0 60px;
+            padding: 30px 0 20px;
             text-align: center;
             color: var(--text-mute);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             border-top: 1px solid var(--border);
+            margin-top: 20px;
         }
 
         @media (max-width: 600px) {
             header {
-                padding: 60px 0 40px;
-            }
-
-            h1 {
-                font-size: 2.1rem;
+                padding: 20px 0 10px;
             }
 
             .exp-header {
                 flex-direction: column;
-                gap: 6px;
             }
 
             .skill-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
         }
     </style>
@@ -234,90 +249,103 @@
 
     <div class="container">
         <header>
-            <div class="header-left">
+            <div>
                 <h1>Sabarinath K</h1>
                 <p class="headline">Senior AI Product Lead</p>
-                <p class="summary">
-                    Over 5 years of experience building enterprise-grade Generative AI solutions. Specialized in
-                    architecting autonomous agent workflows, end-to-end MLOps, and secure identity management platforms.
-                </p>
                 <div class="contact-links">
                     <a href="mailto:sabarinathtn@gmail.com">Email</a>
                     <a href="https://linkedin.com/in/Sabarinath-K-bio" target="_blank">LinkedIn</a>
                     <a href="https://github.com/SabarinathK" target="_blank">GitHub</a>
                 </div>
             </div>
-            <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle Theme">
+            <button class="theme-toggle" onclick="toggleTheme()">
                 <i class="fas fa-sun" id="theme-icon"></i>
             </button>
         </header>
 
-        <section>
-            <h2>Work Experience</h2>
+        <p class="summary">
+            Over 5 years of experience building enterprise-grade Generative AI solutions. Specialized in architecting
+            autonomous agent workflows and secure MLOps platforms.
+        </p>
 
-            <div class="exp-row">
-                <div class="exp-header">
-                    <span class="exp-title">Senior AI Product Lead — Novagito AI</span>
-                    <span class="exp-date">Feb 2024 – Feb 2026</span>
-                </div>
-                <p class="exp-desc">Directing the technical execution of enterprise AI products. Architected 12+ AI
-                    agent workflows with 30+ custom MCPs for nAIdentity, ensuring global GDPR and SOC compliance.</p>
-            </div>
+        <div class="nav-wrapper">
+            <nav class="pill-nav">
+                <button class="tab-btn active" onclick="filterContent('all', this)">All</button>
+                <button class="tab-btn" onclick="filterContent('experience', this)">Exp</button>
+                <button class="tab-btn" onclick="filterContent('projects', this)">Projects</button>
+                <button class="tab-btn" onclick="filterContent('skills', this)">Skills</button>
+            </nav>
+        </div>
 
-            <div class="exp-row">
-                <div class="exp-header">
-                    <span class="exp-title">AI Engineer — AppNAI Technologies</span>
-                    <span class="exp-date">Nov 2022 – Jan 2024</span>
+        <div id="experience" class="content-section">
+            <section>
+                <h2>Work Experience</h2>
+                <div class="exp-row">
+                    <div class="exp-header">
+                        <span class="exp-title">Senior AI Product Lead — Novagito AI</span>
+                        <span class="exp-date">2024 – 2026</span>
+                    </div>
+                    <p class="exp-desc">Directing the technical execution of enterprise AI products. Architected 12+ AI
+                        agent workflows with 30+ custom MCPs for nAIdentity.</p>
                 </div>
-                <p class="exp-desc">Designed and operationalized production-grade supervised and unsupervised ML models.
-                    Spearheaded AWS infrastructure using ECS, ECR, and RDS for scalable AI deployments.</p>
-            </div>
-        </section>
+                <div class="exp-row">
+                    <div class="exp-header">
+                        <span class="exp-title">AI Engineer — AppNAI Technologies</span>
+                        <span class="exp-date">2022 – 2024</span>
+                    </div>
+                    <p class="exp-desc">Designed production-grade ML models and managed AWS infrastructure (ECS, RDS,
+                        S3) for scalable deployments.</p>
+                </div>
+            </section>
+        </div>
 
-        <section>
-            <h2>Technical Core</h2>
-            <div class="skill-grid">
-                <div class="skill-category">
-                    <h3>Intelligence</h3>
-                    <p>LangGraph, LangChain, Pydantic AI, TensorFlow, PEFT, RAG.</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend & Cloud</h3>
-                    <p>FastAPI, Django (DRF), AWS (ECS, S3, RDS), Docker, CI/CD.</p>
-                </div>
-                <div class="skill-category">
-                    <h3>MLOps</h3>
-                    <p>DVC, MLflow, Prefect, Hydra, Model Registry, Monitoring.</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Education</h3>
-                    <p>M.Sc Biotechnology, Published Research in Statistical Methods.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Featured Systems</h2>
-            <div class="project-grid">
+        <div id="projects" class="content-section">
+            <section>
+                <h2>Featured Systems</h2>
                 <div class="project-card">
-                    <h3>nAIdentity (Enterprise IAM)</h3>
-                    <p>Built a multi-agent system for secure identity management using LangChain and GraphRAG. Deployed
-                        via AWS ECS for production scalability.</p>
+                    <h3>nAIdentity</h3>
+                    <p>Enterprise IAM platform with multi-agent systems and GraphRAG. Deployed via AWS ECS.</p>
                 </div>
                 <div class="project-card">
-                    <h3>NG360 (Customer Support AI)</h3>
-                    <p>Led a team of 5 to deliver an omni-channel AI agent platform. Architected the backend using DRF
-                        and integrated custom orchestration tools.</p>
+                    <h3>NG360</h3>
+                    <p>Omni-channel Customer Support AI. Led team of 5 to deliver scalable support orchestration.</p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+
+        <div id="skills" class="content-section">
+            <section>
+                <h2>Technical Core</h2>
+                <div class="skill-grid">
+                    <div class="skill-category">
+                        <h3>Intelligence</h3>
+                        <p>LangGraph, LangChain, Pydantic AI, TensorFlow, RAG.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend/Cloud</h3>
+                        <p>FastAPI, Django, AWS (ECS/S3), Docker, CI/CD.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <footer>
-            <p>&copy; 2026 Sabarinath K. Senior AI Product Lead.</p>
+            <p>&copy; 2026 Sabarinath K.</p>
         </footer>
     </div>
 
     <script>
+        function filterContent(id, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const sections = document.querySelectorAll('.content-section');
+            if (id === 'all') {
+                sections.forEach(s => s.classList.remove('hidden'));
+            } else {
+                sections.forEach(s => s.id === id ? s.classList.remove('hidden') : s.classList.add('hidden'));
+            }
+        }
+
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById('theme-icon');
